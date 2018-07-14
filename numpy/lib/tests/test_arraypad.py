@@ -657,6 +657,9 @@ class TestReflect(object):
         b = np.zeros((0, 5))
         assert_array_equal(a, b)
 
+    def test_check_zero_padding_empty_array(self):
+        a = pad([], (0, 0), mode='reflect')
+        assert_array_equal(a, [])
 
 class TestSymmetric(object):
     def test_check_simple(self):
